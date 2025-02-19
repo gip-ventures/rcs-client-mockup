@@ -1,0 +1,39 @@
+{
+    "name": "@longears/smartphone-mockup",
+    "version": "1.0.0",
+    "description": "A React smartphone preview component",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "style": "dist/index.css",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rollup -c",
+        "watch": "rollup -c -w",
+        "prepare": "npm run build"
+    },
+    "peerDependencies": {
+        "lucide-react": "^0.263.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^22.0.0",
+        "@rollup/plugin-node-resolve": "^13.3.0",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^8.3.2",
+        "@tailwindcss/postcss": "^4.0.7",
+        "@types/react": "^18.0.0",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.5.2",
+        "rollup": "^2.75.6",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-postcss": "^4.0.2",
+        "tailwindcss": "^4.0.7",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.3"
+    },
+    "author": "GIP LT, UAB"
+}
