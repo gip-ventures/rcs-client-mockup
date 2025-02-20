@@ -20,3 +20,16 @@ export interface PreviewToggleProps {
     value: string;
     onChange: (value: string) => void;
 }
+
+export interface InfoScreenProps {
+    heroImage: string;
+    logoImage: string;
+    title: string;
+    description: string;
+    phoneNumber: string;
+    phoneLabel: string;
+    callButtonLabel?: string;
+    activeTab?: 'info' | 'options';
+    onBackClick?: () => void;
+    onTabChange?: (tab: 'info' | 'options') => void;
+}

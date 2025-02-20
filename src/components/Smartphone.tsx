@@ -11,7 +11,7 @@ const sizeClasses = {
         icons: "14",
         iconGap: "gap-1.5",
         homeIndicator: "w-24 h-1",
-        content: "p-3 mt-3"
+        content: "mt-2"
     },
     md: {
         container: "w-72 h-144",
@@ -21,7 +21,7 @@ const sizeClasses = {
         icons: "16",
         iconGap: "gap-1",
         homeIndicator: "w-32 h-1",
-        content: "p-4 mt-4"
+        content: "mt-4"
     },
     lg: {
         container: "w-96 h-192",
@@ -31,7 +31,7 @@ const sizeClasses = {
         icons: "18",
         iconGap: "gap-2",
         homeIndicator: "w-40 h-1",
-        content: "p-6 mt-6"
+        content: "mt-6"
     }
 };
 
