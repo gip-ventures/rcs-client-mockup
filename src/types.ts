@@ -32,4 +32,5 @@ export interface InfoScreenProps {
     activeTab?: 'info' | 'options';
     onBackClick?: () => void;
     onTabChange?: (tab: 'info' | 'options') => void;
+    size?: 'sm' | 'md' | 'lg';
 }
