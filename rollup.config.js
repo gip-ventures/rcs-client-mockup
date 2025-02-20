@@ -32,8 +32,9 @@ export default [
       postcss({
         extract: true,
         minimize: true,
+        extensions: ['.css'],
         plugins: [require('@tailwindcss/postcss'), require('autoprefixer')],
-    }),
+      }),
       terser(),
     ],
   },
@@ -41,11 +42,12 @@ export default [
     input: "src/main.css",
     output: [{ file: "dist/index.css", format: "es" }],
     plugins: [
-        postcss({
-            extract: true,
-            minimize: true,
-            plugins: [require('@tailwindcss/postcss'), require('autoprefixer')],
-        }),
+      postcss({
+        extract: true,
+        minimize: true,
+        extensions: ['.css'],
+        plugins: [require('@tailwindcss/postcss'), require('autoprefixer')],
+      }),
     ],
-    },
+  },
 ];
