@@ -11,7 +11,7 @@ const sizeClasses = {
         icons: "14",
         iconGap: "gap-1.5",
         homeIndicator: "w-24 h-1",
-        content: "mt-2"
+        content: "mt-2 h-101"
     },
     md: {
         container: "w-72 h-144",
@@ -21,7 +21,7 @@ const sizeClasses = {
         icons: "16",
         iconGap: "gap-1",
         homeIndicator: "w-32 h-1",
-        content: "mt-4"
+        content: "mt-4 h-125"
     },
     lg: {
         container: "w-96 h-192",
@@ -31,7 +31,7 @@ const sizeClasses = {
         icons: "18",
         iconGap: "gap-2",
         homeIndicator: "w-40 h-1",
-        content: "mt-6"
+        content: "mt-6 h-172"
     }
 };
 
@@ -65,7 +65,7 @@ const Smartphone: React.FC<SmartphoneProps> = ({
             </div>
 
             {/* Home Indicator */}
-            <div className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 ${classes.homeIndicator} bg-gray-700 rounded-full`} />
+            <div className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 ${classes.homeIndicator} bg-gray-700  rounded-full`} />
         </div>
     );
 };

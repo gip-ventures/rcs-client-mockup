@@ -34,3 +34,17 @@ export interface InfoScreenProps {
     onTabChange?: (tab: 'info' | 'options') => void;
     size?: 'sm' | 'md' | 'lg';
 }
+
+export interface iMessageScreenProps {
+    children: React.ReactNode;
+    logoImage: string;
+    title: string;
+    onBackClick?: () => void;
+    size?: 'sm' | 'md' | 'lg';
+}
+
+export interface MessageBubbleProps {
+    children: React.ReactNode;
+    timestamp?: string;
+    status?: 'sent' | 'delivered' | 'read';
+}
