@@ -1,6 +1,7 @@
 export interface SmartphoneProps {
     children: React.ReactNode;
     time?: string;
+    size?: 'sm' | 'md' | 'lg';
 }
 
 export interface PreviewWrapperProps {
