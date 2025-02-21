@@ -1,98 +1,47 @@
-import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import RichCard from './RichCard';
 import { RichCardCarouselProps } from '../../types';
 
+/**
+ * RichCardCarousel component to display multiple RichCards in a horizontal layout.
+ * 
+ * @component
+ * @param {RichCardCarouselProps} props - The props for the component.
+ * @param {Array} props.cards - Array of RichCardProps to display in the carousel.
+ * @param {'small' | 'medium'} [props.width='medium'] - Width option for cards: 'small' (120 DP) or 'medium' (232 DP).
+ * @returns {JSX.Element | null} The rendered RichCardCarousel component or null if no cards are provided.
+ */
 const RichCardCarousel: React.FC<RichCardCarouselProps> = ({
-  children,
-  width = 'medium',
-  chipSuggestions = []
+    cards = [],
+    width = 'medium'
 }) => {
-  // Ref for scrolling
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
-  // No children to display
-  if (!React.Children.count(children)) {
-    return null;
-  }
-  
-  // Width classes
-  const cardWidthClass = width === 'small' ? 'w-30' : 'w-58'; // 120dp or 232dp
-  
-  // Scroll handlers
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: -200,
-        behavior: 'smooth'
-      });
+    // Return null if no cards provided
+    if (!cards.length) {
+        return null;
     }
-  };
-  
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        left: 200,
-        behavior: 'smooth'
-      });
-    }
-  };
-  
-  return (
-    <div className="flex flex-col w-full max-w-full">
-      {/* Carousel Container */}
-      <div className="relative">
-        {/* Left scroll button, only shown when needed */}
-        <button 
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 rounded-full p-1 shadow-sm"
-          onClick={scrollLeft}
-          aria-label="Scroll left"
-        >
-          <ChevronLeft size={16} />
-        </button>
-        
-        {/* Scrollable cards container */}
-        <div 
-          ref={scrollContainerRef}
-          className="flex space-x-2 overflow-x-auto no-scrollbar py-2 px-1"
-          style={{ scrollSnapType: 'x mandatory' }}
-        >
-          {React.Children.map(children, (child, index) => (
-            <div 
-              key={index} 
-              className={`flex-shrink-0 ${cardWidthClass}`}
-              style={{ scrollSnapAlign: 'start' }}
-            >
-              {child}
+
+    // Width classes based on the width prop
+    const widthClass = width === 'small' ? 'w-32' : 'w-60'; // 120dp ~ 32rem, 232dp ~ 60rem
+
+    return (
+        <div className="overflow-hidden">
+            <div className="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide">
+                {cards.map((card, index) => (
+                    <div
+                        key={index}
+                        className={`flex-shrink-0 ${widthClass} snap-start`}
+                    >
+                        <RichCard
+                            {...card}
+                            layout="vertical"
+                            mediaPosition="top"
+                        />
+                    </div>
+                ))}
             </div>
-          ))}
+
         </div>
-        
-        {/* Right scroll button, only shown when needed */}
-        <button 
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 rounded-full p-1 shadow-sm"
-          onClick={scrollRight}
-          aria-label="Scroll right"
-        >
-          <ChevronRight size={16} />
-        </button>
-      </div>
-      
-      {/* Suggestion Chips */}
-      {chipSuggestions.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-3">
-          {chipSuggestions.slice(0, 11).map((suggestion, index) => (
-            <button
-              key={index}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-xs text-gray-800"
-            >
-              {suggestion.icon && <div className="mr-2">{suggestion.icon}</div>}
-              {suggestion.text}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default RichCardCarousel;

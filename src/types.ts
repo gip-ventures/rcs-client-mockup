@@ -49,18 +49,33 @@ export interface MessageBubbleProps {
     status?: 'sent' | 'delivered' | 'read';
 }
 
+export enum MediaTypes {
+    Image = 'image',
+    Video = 'video',
+    Gif = 'gif',
+}
+
+export enum CardTypes {
+    Short = "short",
+    Medium = "medium",
+    Tall = "tall",
+}
+
+export enum AspectRatios {
+    Wide = "16:9",
+    Panoramic = "2:1",
+    Long = "7:3",
+}
+
 export interface RichCardMedia {
     url: string;
-    type: 'image' | 'video' | 'gif';
-    height: 'short' | 'medium' | 'tall';
-    aspectRatio?: '2:1' | '16:9' | '7:3';
+    type: MediaTypes;
+    height: CardTypes;
+    aspectRatio?: AspectRatios;
 }
 
 export interface RichCardSuggestions {
-    type: 'reply' | 'action';
     text: string;
-    actionType?: 'dial' | 'viewLocation' | 'shareLocation' | 'openUrl' | 'createCalendar' | 'composeMessage';
-    data?: string;
     icon?: React.ReactNode;
 }
 
@@ -68,19 +83,12 @@ export interface RichCardProps {
     title?: string;
     description?: string;
     media?: RichCardMedia;
-    layout: 'vertical' | 'horizontal';
+    layout?: 'vertical' | 'horizontal';
     mediaPosition?: 'left' | 'right' | 'top';
     suggestions?: RichCardSuggestions[];
 }
 
 export interface RichCardCarouselProps {
-    children: React.ReactNode;
+    cards: RichCardProps[];
     width?: 'small' | 'medium';
-    chipSuggestions?: Array<{
-        type: 'reply' | 'action';
-        text: string;
-        actionType?: 'dial' | 'viewLocation' | 'shareLocation' | 'openUrl' | 'createCalendar' | 'composeMessage';
-        data?: string;
-        icon?: React.ReactNode;
-    }>;
 }
