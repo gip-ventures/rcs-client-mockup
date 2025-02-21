@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronLeft, Phone } from 'lucide-react';
-import { InfoScreenProps } from '../../types';
+import { InfoScreenProps, Sizes, Tabs } from '../../types';
 
 const sizeClasses = {
   sm: {
@@ -93,10 +93,10 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
   phoneNumber,
   phoneLabel,
   callButtonLabel = 'Call',
-  activeTab = 'info',
+  activeTab = Tabs.Info,
   onBackClick,
   onTabChange,
-  size = 'md'
+  size = Sizes.Medium
 }) => {
   const classes = sizeClasses[size];
 
@@ -160,7 +160,7 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
       {/* Tabs */}
       <div className="flex border-b border-gray-200 mt-2">
         <button
-          onClick={() => onTabChange?.('info')}
+          onClick={() => onTabChange?.(Tabs.Info)}
           className={`flex-1 ${classes.content.tabPadding} ${classes.content.descSize} font-medium ${
             activeTab === 'info'
               ? 'text-blue-600 border-b-2 border-blue-600'
@@ -170,7 +170,7 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
           Info
         </button>
         <button
-          onClick={() => onTabChange?.('options')}
+          onClick={() => onTabChange?.(Tabs.Options)}
           className={`flex-1 ${classes.content.tabPadding} ${classes.content.descSize} font-medium ${
             activeTab === 'options'
               ? 'text-blue-600 border-b-2 border-blue-600'

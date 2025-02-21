@@ -1,6 +1,6 @@
 import React from 'react';
 import RichCard from './RichCard';
-import { RichCardCarouselProps } from '../../types';
+import { Layouts, MediaPositions, RichCardCarouselProps } from '../../types';
 
 /**
  * RichCardCarousel component to display multiple RichCards in a horizontal layout.
@@ -33,8 +33,8 @@ const RichCardCarousel: React.FC<RichCardCarouselProps> = ({
                     >
                         <RichCard
                             {...card}
-                            layout="vertical"
-                            mediaPosition="top"
+                            layout={Layouts.Vertical}
+                            mediaPosition={MediaPositions.Top}
                         />
                     </div>
                 ))}

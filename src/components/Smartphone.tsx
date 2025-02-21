@@ -1,6 +1,6 @@
 import React from 'react';
 import { Battery, Signal, Wifi } from 'lucide-react';
-import { SmartphoneProps } from '../types';
+import { Sizes, SmartphoneProps } from '../types';
 
 const sizeClasses = {
     sm: {
@@ -48,7 +48,7 @@ const sizeClasses = {
 const Smartphone: React.FC<SmartphoneProps> = ({
     children,
     time = "12:33",
-    size = "md"
+    size = Sizes.Medium
 }) => {
     const classes = sizeClasses[size];
 

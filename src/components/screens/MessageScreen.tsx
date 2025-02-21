@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronLeft } from 'lucide-react';
-import { iMessageScreenProps } from '../../types';
+import { iMessageScreenProps, Sizes } from '../../types';
 
 const sizeClasses = {
     sm: {
@@ -67,7 +67,7 @@ const iMessageScreen: React.FC<iMessageScreenProps> = ({
     logoImage,
     title,
     onBackClick,
-    size = 'md'
+    size = Sizes.Medium
 }) => {
     const classes = sizeClasses[size];
 

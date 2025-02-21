@@ -1,7 +1,13 @@
+export enum Sizes {
+    Small = 'sm',
+    Medium = 'md',
+    Large = 'lg',
+}
+
 export interface SmartphoneProps {
     children: React.ReactNode;
     time?: string;
-    size?: 'sm' | 'md' | 'lg';
+    size?: Sizes;
 }
 
 export interface PreviewWrapperProps {
@@ -21,6 +27,11 @@ export interface PreviewToggleProps {
     onChange: (value: string) => void;
 }
 
+export enum Tabs {
+    Info = 'info',
+    Options = 'options',
+}
+
 export interface InfoScreenProps {
     heroImage: string;
     logoImage: string;
@@ -29,10 +40,10 @@ export interface InfoScreenProps {
     phoneNumber: string;
     phoneLabel: string;
     callButtonLabel?: string;
-    activeTab?: 'info' | 'options';
+    activeTab?: Tabs;
     onBackClick?: () => void;
-    onTabChange?: (tab: 'info' | 'options') => void;
-    size?: 'sm' | 'md' | 'lg';
+    onTabChange?: (tab: Tabs) => void;
+    size?: Sizes;
 }
 
 export interface iMessageScreenProps {
@@ -40,13 +51,19 @@ export interface iMessageScreenProps {
     logoImage: string;
     title: string;
     onBackClick?: () => void;
-    size?: 'sm' | 'md' | 'lg';
+    size?: Sizes;
+}
+
+export enum Statuses {
+    Sent = 'sent',
+    Delivered = 'delivered',
+    Read = 'read',
 }
 
 export interface MessageBubbleProps {
     children: React.ReactNode;
     timestamp?: string;
-    status?: 'sent' | 'delivered' | 'read';
+    status?: Statuses;
 }
 
 export enum MediaTypes {
@@ -79,16 +96,32 @@ export interface RichCardSuggestions {
     icon?: React.ReactNode;
 }
 
+export enum Layouts {
+    Vertical = 'vertical',
+    Horizontal = 'horizontal',
+}
+
+export enum MediaPositions {
+    Left = 'left',
+    Right = 'right',
+    Top = 'top',
+}
+
 export interface RichCardProps {
     title?: string;
     description?: string;
     media?: RichCardMedia;
-    layout?: 'vertical' | 'horizontal';
-    mediaPosition?: 'left' | 'right' | 'top';
+    layout?: Layouts;
+    mediaPosition?: MediaPositions;
     suggestions?: RichCardSuggestions[];
+}
+
+export enum Widths {
+    Small = 'small',
+    Medium = 'medium',
 }
 
 export interface RichCardCarouselProps {
     cards: RichCardProps[];
-    width?: 'small' | 'medium';
+    width?: Widths;
 }
