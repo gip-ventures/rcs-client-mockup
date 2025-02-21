@@ -1,5 +1,5 @@
 import React from 'react';
-import { PreviewToggleProps } from '../types';
+import { PreviewToggleProps } from '../../types';
 
 const PreviewToggle: React.FC<PreviewToggleProps> = ({
     options,

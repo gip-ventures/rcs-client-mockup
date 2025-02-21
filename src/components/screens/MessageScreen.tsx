@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronLeft } from 'lucide-react';
-import { iMessageScreenProps } from '../types';
+import { iMessageScreenProps } from '../../types';
 
 const sizeClasses = {
     sm: {

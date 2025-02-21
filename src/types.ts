@@ -48,3 +48,39 @@ export interface MessageBubbleProps {
     timestamp?: string;
     status?: 'sent' | 'delivered' | 'read';
 }
+
+export interface RichCardMedia {
+    url: string;
+    type: 'image' | 'video' | 'gif';
+    height: 'short' | 'medium' | 'tall';
+    aspectRatio?: '2:1' | '16:9' | '7:3';
+}
+
+export interface RichCardSuggestions {
+    type: 'reply' | 'action';
+    text: string;
+    actionType?: 'dial' | 'viewLocation' | 'shareLocation' | 'openUrl' | 'createCalendar' | 'composeMessage';
+    data?: string;
+    icon?: React.ReactNode;
+}
+
+export interface RichCardProps {
+    title?: string;
+    description?: string;
+    media?: RichCardMedia;
+    layout: 'vertical' | 'horizontal';
+    mediaPosition?: 'left' | 'right' | 'top';
+    suggestions?: RichCardSuggestions[];
+}
+
+export interface RichCardCarouselProps {
+    children: React.ReactNode;
+    width?: 'small' | 'medium';
+    chipSuggestions?: Array<{
+        type: 'reply' | 'action';
+        text: string;
+        actionType?: 'dial' | 'viewLocation' | 'shareLocation' | 'openUrl' | 'createCalendar' | 'composeMessage';
+        data?: string;
+        icon?: React.ReactNode;
+    }>;
+}
