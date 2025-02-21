@@ -1,5 +1,5 @@
 import React from 'react';
-import { RichCardProps, RichCardSuggestions } from '../../types';
+import { RichCardMedia, RichCardProps, RichCardSuggestions } from '../../types';
 
 // Maps for size classes based on media height
 const mediaHeightClasses = {
@@ -8,6 +8,20 @@ const mediaHeightClasses = {
   tall: 'h-36' // 264 DP
 };
 
+/**
+ * RichCard component to display a card with media, title, description, and suggestions.
+ * 
+ * @param {RichCardProps} props - The properties for the RichCard component.
+ * @param {string} props.title - The title of the card.
+ * @param {string} props.description - The description of the card.
+ * @param {RichCardMedia} props.media - The media object containing url and type.
+ * @param {string} props.media.url - The URL of the media.
+ * @param {string} props.media.type - The type of the media (e.g., 'image', 'video').
+ * @param {string} [props.layout='vertical'] - The layout of the card ('vertical' or 'horizontal').
+ * @param {string} [props.mediaPosition='top'] - The position of the media ('top', 'left', 'right').
+ * @param {RichCardSuggestions[]} [props.suggestions=[]] - The list of suggestions to display.
+ * @returns {JSX.Element|null} The rendered RichCard component or null if no content is provided.
+ */
 const RichCard: React.FC<RichCardProps> = ({
   title,
   description,
@@ -36,7 +50,7 @@ const RichCard: React.FC<RichCardProps> = ({
   // Render horizontal layout
   if (layout === 'horizontal') {
     return (
-      <div className="flex rounded-lg overflow-hidden bg-white shadow-sm border border-gray-200 w-4/5">
+      <div className="flex rounded-lg overflow-hidden bg-white shadow-sm border border-gray-200 max-w-sm">
         {/* Media on the left */}
         {hasMedia && mediaPosition === 'left' && (
           <div className="w-32 flex-shrink-0 bg-gray-100 overflow-hidden">
@@ -101,7 +115,7 @@ const RichCard: React.FC<RichCardProps> = ({
   
   // Vertical layout
   return (
-          <div className="rounded-lg overflow-hidden bg-white shadow-sm border border-gray-200 w-4/5">
+          <div className="rounded-lg overflow-hidden bg-white shadow-sm border border-gray-200 max-w-sm">
       {/* Media at the top for vertical layout */}
       {hasMedia && (
         <div className={`w-full ${mediaHeightClass} bg-gray-100 overflow-hidden`}>

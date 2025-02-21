@@ -50,6 +50,18 @@ const sizeClasses = {
     }
 };
 
+/**
+ * iMessageScreen component renders a messaging screen with a header, content area, and input area.
+ *
+ * @component
+ * @param {iMessageScreenProps} props - The props object.
+ * @param {React.ReactNode} props.children - The content to be displayed in the message screen.
+ * @param {string} props.logoImage - The URL of the logo image to be displayed in the header.
+ * @param {string} props.title - The title to be displayed in the header.
+ * @param {function} props.onBackClick - The function to be called when the back button is clicked.
+ * @param {'sm' | 'md' | 'lg'} [props.size='md'] - The size of the message screen, which determines the padding and dimensions of various elements.
+ * @returns {JSX.Element} The rendered iMessageScreen component.
+ */
 const iMessageScreen: React.FC<iMessageScreenProps> = ({
     children,
     logoImage,

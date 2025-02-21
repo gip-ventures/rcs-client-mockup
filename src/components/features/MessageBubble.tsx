@@ -1,6 +1,16 @@
 import React from 'react';
 import { MessageBubbleProps } from '../../types';
 
+/**
+ * MessageBubble component displays a message bubble with a timestamp and status.
+ *
+ * @component
+ * @param {MessageBubbleProps} props - The props for the component.
+ * @param {React.ReactNode} props.children - The content of the message bubble.
+ * @param {string} [props.timestamp] - The timestamp of the message.
+ * @param {string} [props.status='read'] - The status of the message, defaults to 'read'.
+ * @returns {JSX.Element} The rendered message bubble component.
+ */
 const MessageBubble: React.FC<MessageBubbleProps> = ({
     children,
     timestamp,

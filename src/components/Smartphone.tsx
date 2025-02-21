@@ -35,6 +35,16 @@ const sizeClasses = {
     }
 };
 
+/**
+ * Smartphone component renders a mockup of a smartphone with dynamic size, status bar, and content area.
+ *
+ * @component
+ * @param {SmartphoneProps} props - Component props
+ * @param {React.ReactNode} props.children - Content to be displayed inside the smartphone mockup
+ * @param {string} [props.time="12:33"] - Time to be displayed in the status bar
+ * @param {"sm" | "md" | "lg"} [props.size="md"] - Size of the smartphone mockup
+ * @returns {JSX.Element} The rendered smartphone mockup component
+ */
 const Smartphone: React.FC<SmartphoneProps> = ({
     children,
     time = "12:33",

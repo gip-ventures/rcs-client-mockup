@@ -68,6 +68,23 @@ const sizeClasses = {
   }
 };
 
+/**
+ * InfoScreen component displays information and options with a hero image, logo, title, description, and tabs.
+ * 
+ * @param {InfoScreenProps} props - The props for the InfoScreen component.
+ * @param {string} props.heroImage - The URL of the hero image.
+ * @param {string} props.logoImage - The URL of the logo image.
+ * @param {string} props.title - The title text.
+ * @param {string} props.description - The description text.
+ * @param {string} props.phoneNumber - The phone number to display.
+ * @param {string} props.phoneLabel - The label for the phone number.
+ * @param {string} [props.callButtonLabel='Call'] - The label for the call button.
+ * @param {string} [props.activeTab='info'] - The currently active tab ('info' or 'options').
+ * @param {function} props.onBackClick - The function to call when the back button is clicked.
+ * @param {function} props.onTabChange - The function to call when the tab is changed.
+ * @param {string} [props.size='md'] - The size of the component ('sm', 'md', or 'lg').
+ * @returns {JSX.Element} The rendered InfoScreen component.
+ */
 const InfoScreen: React.FC<InfoScreenProps> = ({
   heroImage,
   logoImage,
