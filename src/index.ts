@@ -11,6 +11,7 @@ export { default as MessageScreen } from './components/screens/MessageScreen';
 export { default as MessageBubble } from './components/features/MessageBubble';
 export { default as RichCard } from './components/features/RichCard';
 export { default as RichCardCarousel } from './components/features/RichCardCarousel';
+export { default as ReplyChip } from './components/features/ReplyChip';
 
 {/* Types */}
 export * from './types';

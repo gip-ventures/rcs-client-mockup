@@ -125,3 +125,13 @@ export interface RichCardCarouselProps {
     cards: RichCardProps[];
     width?: Widths;
 }
+
+export interface ReplyChipProps {
+    text: string;
+    icon?: React.ReactNode;
+    onClick?: () => void;
+}
+
+export interface RepliesChipProps {
+    replies: ReplyChipProps[];
+}
