@@ -8,13 +8,13 @@ import { MessageBubbleProps } from '../../types';
  * @param {MessageBubbleProps} props - The props for the component.
  * @param {React.ReactNode} props.children - The content of the message bubble.
  * @param {string} [props.timestamp] - The timestamp of the message.
- * @param {string} [props.status='read'] - The status of the message, defaults to 'read'.
+ * @param {string} [props.status] - The status of the message, can ber "read", "delivered", "sent".
  * @returns {JSX.Element} The rendered message bubble component.
  */
 const MessageBubble: React.FC<MessageBubbleProps> = ({
     children,
     timestamp,
-    status = 'read'
+    status
 }) => {
     return (
         <div className="flex flex-col items-end">
