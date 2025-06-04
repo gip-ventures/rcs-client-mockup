@@ -1,7 +1,7 @@
 {
     "name": "@longears-mobile/rcs-client-mockup",
     "version": "1.0.0",
-    "description": "A React smartphone preview component for RCS client mockups.",
+    "description": "A React smartphone preview components for RCS client mockups.",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
@@ -35,5 +35,5 @@
         "tslib": "^2.4.0",
         "typescript": "^4.7.3"
     },
-    "author": "GIP LT, UAB"
+    "author": "GIP Ventures"
 }
