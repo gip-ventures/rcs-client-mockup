@@ -1,7 +1,7 @@
 {
-    "name": "@longears/smartphone-mockup",
+    "name": "@longears-mobile/rcs-client-mockup",
     "version": "1.0.0",
-    "description": "A React smartphone preview component",
+    "description": "A React smartphone preview component for RCS client mockups.",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
