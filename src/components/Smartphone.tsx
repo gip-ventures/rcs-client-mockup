@@ -1,4 +1,3 @@
-import React from 'react';
 import { Battery, Signal, Wifi } from 'lucide-react';
 import { Sizes, SmartphoneProps } from '../types';
 

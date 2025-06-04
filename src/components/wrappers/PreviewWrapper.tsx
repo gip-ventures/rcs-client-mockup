@@ -1,4 +1,3 @@
-import React from 'react';
 import { PreviewWrapperProps } from '../../types';
 
 const PreviewWrapper: React.FC<PreviewWrapperProps> = ({

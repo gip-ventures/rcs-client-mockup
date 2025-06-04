@@ -1,4 +1,3 @@
-import React from 'react';
 import { ChevronLeft, Phone } from 'lucide-react';
 import { InfoScreenProps, Sizes, Tabs } from '../../types';
 

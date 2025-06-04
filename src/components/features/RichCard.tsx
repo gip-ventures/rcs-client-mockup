@@ -1,4 +1,3 @@
-import React from 'react';
 import { RichCardProps, RichCardSuggestions } from '../../types';
 
 // Maps for size classes based on media height

@@ -12,13 +12,14 @@
     "scripts": {
         "build": "rollup -c",
         "watch": "rollup -c -w",
+        "develop": "npm run build && npm link",
         "prepare": "npm run build",
-        "publish": "npm run build && npm publish --access public"
+        "publish": "npm publish --access public"
     },
     "peerDependencies": {
-        "lucide-react": "^0.263.1",
-        "react": "^18.0.0 || ^19.0.0",
-        "react-dom": "^18.0.0 || ^19.0.0"
+        "lucide-react": "^0.513.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^22.0.0",
@@ -26,7 +27,7 @@
         "@rollup/plugin-terser": "^0.4.4",
         "@rollup/plugin-typescript": "^8.3.2",
         "@tailwindcss/postcss": "^4.0.7",
-        "@types/react": "^18.0.0",
+        "@types/react": "^19.0.0",
         "autoprefixer": "^10.4.20",
         "postcss": "^8.5.2",
         "rollup": "^2.75.6",

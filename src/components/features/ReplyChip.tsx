@@ -1,4 +1,3 @@
-import React from 'react';
 import { RepliesChipProps } from '../../types';
 
 /**

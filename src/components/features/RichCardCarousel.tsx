@@ -1,4 +1,3 @@
-import React from 'react';
 import RichCard from './RichCard';
 import { Layouts, MediaPositions, RichCardCarouselProps } from '../../types';
 
