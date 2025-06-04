@@ -1,6 +1,6 @@
 {
     "name": "@longears-mobile/rcs-client-mockup",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A React smartphone preview components for RCS client mockups.",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
