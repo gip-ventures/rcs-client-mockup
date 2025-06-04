@@ -35,5 +35,19 @@
         "tslib": "^2.4.0",
         "typescript": "^4.7.3"
     },
-    "author": "GIP Ventures"
+    "author": "GIP Ventures",
+    "license": "MIT",
+    "keywords": [
+        "react",
+        "smartphone",
+        "mockup",
+        "rcs",
+        "messaging",
+        "ui",
+        "mobile"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gip-ventures/rcs-client-mockup"
+    }
 }

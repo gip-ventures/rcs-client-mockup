@@ -1,17 +1,17 @@
-# @longears/smartphone-mockup
+# @longears-mobile/rcs-client-mockup
 
-A React component library for rendering customizable smartphone mockups with messaging features. This package is designed to create realistic smartphone UI previews with various components like message bubbles, rich cards, reply chips, and more.
+A React component library for rendering customizable smartphone mockups with RCS client messaging features. This package is designed to create realistic smartphone UI previews with various components like message bubbles, rich cards, reply chips, and more.
 
 ## Installation
 
 ```bash
-npm install @longears/smartphone-mockup
+npm install @longears-mobile/rcs-client-mockup
 ```
 
 Or using yarn:
 
 ```bash
-yarn add @longears/smartphone-mockup
+yarn add @longears-mobile/rcs-client-mockup
 ```
 
 ## Peer Dependencies
@@ -29,8 +29,8 @@ This package requires the following peer dependencies:
 ## Basic Usage
 
 ```jsx
-import { Smartphone, MessageBubble, Statuses } from '@longears/smartphone-mockup';
-import '@longears/smartphone-mockup/dist/index.css';
+import { Smartphone, MessageBubble, Statuses } from '@longears-mobile/rcs-client-mockup';
+import '@longears-mobile/rcs-client-mockup/dist/index.css';
 
 function App() {
   return (
@@ -282,7 +282,7 @@ import {
   RichCard,
   ReplyChip,
   Statuses
-} from '@longears/smartphone-mockup';
+} from '@longears-mobile/rcs-client-mockup';
 
 function App() {
   return (
@@ -324,4 +324,6 @@ function App() {
 
 ## License
 
-This package is created by GIP LT, UAB.
+This package is released under the [MIT License](LICENSE).
+
+Copyright (c) 2025 GIP Ventures.
