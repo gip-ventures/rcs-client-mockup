@@ -12,7 +12,8 @@
     "scripts": {
         "build": "rollup -c",
         "watch": "rollup -c -w",
-        "prepare": "npm run build"
+        "prepare": "npm run build",
+        "publish": "npm run build && npm publish --access public"
     },
     "peerDependencies": {
         "lucide-react": "^0.263.1",
