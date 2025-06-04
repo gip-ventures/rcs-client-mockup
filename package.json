@@ -16,8 +16,10 @@
         "prepare": "npm run build",
         "publish": "npm publish --access public"
     },
+    "dependencies": {
+        "lucide-react": "^0.513.0"
+    },
     "peerDependencies": {
-        "lucide-react": "^0.513.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
     },

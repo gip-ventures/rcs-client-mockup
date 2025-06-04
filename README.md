@@ -20,7 +20,6 @@ This package requires the following peer dependencies:
 
 ```json
 "peerDependencies": {
-  "lucide-react": "^0.263.1",
   "react": "^19.0.0",
   "react-dom": "^19.0.0"
 }
