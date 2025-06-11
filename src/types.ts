@@ -44,6 +44,7 @@ export interface InfoScreenProps {
     onBackClick?: () => void;
     onTabChange?: (tab: Tabs) => void;
     size?: Sizes;
+    accentColor?: string;
 }
 
 export interface iMessageScreenProps {

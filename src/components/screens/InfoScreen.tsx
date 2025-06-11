@@ -1,6 +1,9 @@
 import { ChevronLeft, Phone } from 'lucide-react';
 import { InfoScreenProps, Sizes, Tabs } from '../../types';
 
+// Default accent color
+const DEFAULT_ACCENT_COLOR = '#2563eb'; // blue-600 hex equivalent
+
 const sizeClasses = {
   sm: {
     header: {
@@ -82,6 +85,7 @@ const sizeClasses = {
  * @param {function} props.onBackClick - The function to call when the back button is clicked.
  * @param {function} props.onTabChange - The function to call when the tab is changed.
  * @param {string} [props.size='md'] - The size of the component ('sm', 'md', or 'lg').
+ * @param {string} [props.accentColor='#2563eb'] - The accent color in hex format for buttons and active elements.
  * @returns {JSX.Element} The rendered InfoScreen component.
  */
 const InfoScreen: React.FC<InfoScreenProps> = ({
@@ -95,7 +99,8 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
   activeTab = Tabs.Info,
   onBackClick,
   onTabChange,
-  size = Sizes.Medium
+  size = Sizes.Medium,
+  accentColor = DEFAULT_ACCENT_COLOR
 }) => {
   const classes = sizeClasses[size];
 
@@ -150,7 +155,13 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
 
       {/* Call Button */}
       <div className={`flex justify-center ${classes.content.buttonPadding}`}>
-        <button className="flex items-center justify-center w-full py-2 text-blue-600 hover:bg-blue-50 rounded-lg">
+        <button 
+          className="flex items-center justify-center w-full py-2 rounded-lg hover:bg-opacity-10"
+          style={{ 
+            color: accentColor,
+            backgroundColor: `${accentColor}10` // 10% opacity for hover
+          }}
+        >
           <Phone className={`${classes.content.buttonIconSize} mr-2`} />
           <span>{callButtonLabel}</span>
         </button>
@@ -162,9 +173,10 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
           onClick={() => onTabChange?.(Tabs.Info)}
           className={`flex-1 ${classes.content.tabPadding} ${classes.content.descSize} font-medium ${
             activeTab === 'info'
-              ? 'text-blue-600 border-b-2 border-blue-600'
+              ? 'border-b-2 text-gray-600'
               : 'text-gray-600'
           }`}
+          style={activeTab === 'info' ? { color: accentColor, borderColor: accentColor } : {}}
         >
           Info
         </button>
@@ -172,9 +184,10 @@ const InfoScreen: React.FC<InfoScreenProps> = ({
           onClick={() => onTabChange?.(Tabs.Options)}
           className={`flex-1 ${classes.content.tabPadding} ${classes.content.descSize} font-medium ${
             activeTab === 'options'
-              ? 'text-blue-600 border-b-2 border-blue-600'
+              ? 'border-b-2 text-gray-600'
               : 'text-gray-600'
           }`}
+          style={activeTab === 'options' ? { color: accentColor, borderColor: accentColor } : {}}
         >
           Options
         </button>
